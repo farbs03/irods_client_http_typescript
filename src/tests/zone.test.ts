@@ -33,16 +33,6 @@ describe('ZoneTests', () => {
         expect(res?.irods_response.status_code).toEqual(0)
     })
 
-    test('Set zone collection permission', async () => {
-        const res = await api.zones.set_zone_collection_permission({
-            name: 'testZone',
-            permission: 'read',
-            user: 'chris',
-        })
-        expect(res).toBeTruthy()
-        expect(res?.irods_response.status_code).toEqual(0)
-    })
-
     test('Zone report', async () => {
         const res = await api.zones.report()
         expect(res).toBeTruthy()

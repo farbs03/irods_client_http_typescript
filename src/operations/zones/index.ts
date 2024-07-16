@@ -66,25 +66,6 @@ export class ZoneOperations {
         }
     }
 
-    async set_zone_collection_permission(
-        params: ZoneTypes.SetZoneCollectionPermissionParams
-    ): Promise<null | ZoneTypes.SetZoneCollectionPermissionResponse> {
-        try {
-            const res = await this.client.post(
-                '/zones',
-                toURLSearchParams({
-                    op: 'set_zone_collection_permission',
-                    ...params,
-                })
-            )
-            return res.data
-        } catch (error) {
-            if (error instanceof AxiosError)
-                console.error('Error: ', error.response?.statusText)
-            return null
-        }
-    }
-
     async report(): Promise<null | ZoneTypes.ZoneReportResponse> {
         try {
             const res = await this.client.get('/zones', {

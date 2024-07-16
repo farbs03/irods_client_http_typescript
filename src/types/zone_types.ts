@@ -28,16 +28,6 @@ export type ZoneModifyParams = {
 
 export type ZoneModifyResponse = IrodsResponse
 
-/* Set zone collection permission */
-
-export type SetZoneCollectionPermissionParams = {
-    name: string,
-    user: string,
-    permission: "null" | "read"
-}
-
-export type SetZoneCollectionPermissionResponse = IrodsResponse
-
 /* Report */
 
 export type CoordinatingResource = {
